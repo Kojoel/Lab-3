@@ -7,30 +7,26 @@ galleryContainer.appendChild(gallery);
 console.log(gallery);
 
 let images = [
-    'Grassland-sm.jpg', 
-    'Hotairbaloons-sm.jpg', 
-    'Rockformation-sm.jpg', 
-    'Savannaplanes-sm.jpg', 
-    'Savannaplanesnight-sm.jpg', 
-    'sky-sm.jpg'];
+    './Images original/thumbnails/Grassland-sm.jpg', 
+    './Images original/thumbnails/Hotairbaloons-sm.jpg', 
+    './Images original/thumbnails/Rockformation-sm.jpg', 
+    './Images original/thumbnails/Savannaplanes-sm.jpg', 
+    './Images original/thumbnails/Savannaplanesnight-sm.jpg', 
+    './Images original/thumbnails/sky-sm.jpg'];
 
 console.log(images);
 
-window.addEventListener('load', () => {
-    images.forEach(image => {
-        const img = document.createElement('img');
-        img.setAttribute('src', `./Images original/thumbnails/${images[0]}/`);
-        gallery.appendChild(img);
-        console.log(img);
-    })
+
+images.forEach(image => {
+    const img = document.createElement('img');
+    img.setAttribute('src', `${image}`);
+    gallery.appendChild(img);
+    console.log(img);
 })
 
-// const imgs = document.querySelectorAll('.gallery img');
-// console.log(imgs)
 
-const createLightBox = document.createElement('div');
-createLightBox.id = 'lightBox';
-document.body.appendChild(createLightBox);
+const imgs = document.querySelectorAll('.gallery img');
+console.log(imgs)
 
 imgs.forEach(image => {
     image.addEventListener('click', () => {
@@ -44,6 +40,10 @@ imgs.forEach(image => {
         img.style.padding = '4px';
     });
 });
+
+const createLightBox = document.createElement('div');
+createLightBox.id = 'lightBox';
+document.body.appendChild(createLightBox);
 
 createLightBox.addEventListener('click', e => {
     if(e.target !== e.currentTarget) return;
