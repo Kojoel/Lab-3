@@ -31,7 +31,7 @@ body{
 }
 
 .gallery img{
-    width: 200px   ;
+    width: 210px   ;
     border-radius: 8px;
 }
 .gallery img:hover{
@@ -59,4 +59,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Icons */
+#prev, #next{
+    
 }

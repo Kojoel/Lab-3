@@ -33,6 +33,9 @@ imgs.forEach(image => {
         createLightBox.classList.add('active');
         const img = document.createElement('img');
         img.src = image.src;
+        while(createLightBox.firstChild){
+            createLightBox.removeChild(createLightBox.firstChild);
+        }
         createLightBox.appendChild(img);
         img.style.width = '500px';
         img.style.border = '1px solid white';
@@ -40,6 +43,7 @@ imgs.forEach(image => {
         img.style.padding = '4px';
     });
 });
+
 
 const createLightBox = document.createElement('div');
 createLightBox.id = 'lightBox';
@@ -50,3 +54,16 @@ createLightBox.addEventListener('click', e => {
     createLightBox.classList.remove('active');
     
 });
+
+
+/* Previous and Next buttons */
+const prev = document.createElement('img');
+prev.src = "C:/'Users/ITCompliance/Documents/Amalitech Front End Labs/Lab-3/icons/prev.png"
+prev.setAttribute('id', 'prev');
+
+const next = document.createElement('img');
+next.src = "C:/'Users/ITCompliance/Documents/Amalitech Front End Labs/Lab-3/icons/prev.png"
+next.setAttribute('id', 'next');
+
+createLightBox.appendChild(prev);
+createLightBox.appendChild(next);
